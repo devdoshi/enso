@@ -1,0 +1,67 @@
+from Standard.Base import all
+
+## Represents a complex number
+type Complex
+    # type Complex (real: Number) (imaginary: Number)
+    type Complex real imaginary
+
+    ## Gets the inverse of the complex number
+
+      > Example
+        The following has an absolute value of 5:
+
+          Complex 3 4 . inverse
+
+    inverse : Complex
+    inverse = Complex (1 / this.real) (1 / this.imaginary)
+
+    ## Gets the absolute (or modulus) of the complex number
+
+      > Example
+        The following has an absolute value of 5:
+
+          Complex 3 4 . absolute
+
+    absolute : Number
+    absolute = (this.real * this.real + this.imaginary * this.imaginary) . sqrt
+
+    ## Gets the argument of the complex number
+
+      > Example
+        The following has an absolute value of 5:
+
+          Complex 3 4 . absolute
+
+    absolute : Number
+    absolute = (this.real * this.real + this.imaginary * this.imaginary) . sqrt
+
+    ## Gets the Complex Conjugate
+
+      > Example
+        The following has a conjugate of 3 - 4i:
+
+          Complex 3 4 . conjugate
+
+    conjugate : Complex
+    conjugate = Complex this.real -this.imaginary
+
+    ## Addition operator for Complex or Number
+    + : Complex | Number -> Complex
+    + that =  case that of
+        Number -> Complex (this.real + that) (this.imaginary)
+        Complex r i -> Complex (this.real + r) (this.imaginary + i)
+
+    ## Subtraction operator for Complex or Number
+    - : Complex | Number -> Complex
+    - that =  case that of
+        Number -> Complex (this.real - that) (this.imaginary)
+        Complex r i -> Complex (this.real - r) (this.imaginary - i)
+
+    ## Multiplication operator for Complex or Number
+    * : Complex | Number -> Complex
+    * that =  case that of
+        Number -> Complex (this.real * that) (this.imaginary * that)
+        Complex r i -> Complex (this.real * r - this.imaginary * i) (this.real * i + this.imaginary * r)
+
+
+Complex.i = Complex 0 1
