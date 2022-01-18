@@ -23,7 +23,7 @@ import Standard.Base.Polyglot.Java
 import Standard.Base.System.File
 import Standard.Base.Data.Text.Regex.Mode as Regex_Mode
 
-from Standard.Builtins import Nothing, Number, Integer, Any, True, False, Cons, Boolean, Arithmetic_Error
+from Standard.Builtins import Nothing, Number, Integer, Any, True, False, Cons, Boolean, Arithmetic_Error, Warning
 
 export Standard.Base.Data.Interval
 export Standard.Base.Data.Json
